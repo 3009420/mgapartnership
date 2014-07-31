@@ -1,0 +1,22 @@
+{
+  "name": "mgapartnership",
+  "version": "0.0.0",
+  "description": "Medic Grid Africa Partnership",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Medic",
+    "Grid",
+    "Africa"
+  ],
+  "author": "Dominic Thompson",
+  "license": "ISC",
+  "devDependencies": {
+    "should": "^4.0.4"
+  },
+  "dependencies": {
+    "moment": "^2.7.0"
+  }
+}
