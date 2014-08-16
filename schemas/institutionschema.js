@@ -1,6 +1,6 @@
 var mongoose =  require('mongoose');
 
-var InstitutionSchema =  mongoose.Schema({
+var institutionSchema =  mongoose.Schema({
 
     name : String,
     address: String,
@@ -9,8 +9,8 @@ var InstitutionSchema =  mongoose.Schema({
     region_province_state : String,
     country : String,
     contact_person : String,
-    email: String,
-    contact_number : String,
+    email:  {address :String, verified: Boolean},
+    contact_number : {number :String, verified: Boolean},
     is_private : Boolean,
     is_facility : Boolean,
     is_nongovernmental : Boolean,
@@ -23,6 +23,6 @@ var InstitutionSchema =  mongoose.Schema({
 
 });
 
-//var InstitutionModel  = mongoose.model('institutions', institutionSchema);
+var InstitutionModel  = mongoose.model('institutions', institutionSchema);
 
-module.exports = InstitutionSchema;
+module.exports = InstitutionModel;

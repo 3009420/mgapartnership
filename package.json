@@ -17,6 +17,7 @@
     "should": "^4.0.4"
   },
   "dependencies": {
-    "moment": "^2.7.0"
+    "moment": "^2.7.0",
+    "speakeasy": "^1.0.3"
   }
 }

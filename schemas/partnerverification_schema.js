@@ -4,14 +4,20 @@
 
 var mongoose = require('mongoose');
 
-var volunteerVerificationTokenSchema = mongoose.Schema({
-    _volunteerId: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'volunteer'},
+var uuid = require('node-uuid');
+
+//var Institution = require('./institutionschema');
+
+
+var partnerVerificationTokenSchema = mongoose.Schema({
+    _institutionId: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'institution'},
     token: {type: String, required: true},
     createdAt: {type: Date, required: true, default: Date.now, expires: '4h'}
 });
 
-var uuid = require('node-uuid');
-volunteerVerificationTokenSchema.methods.createVerificationToken = function (done) {
+
+
+partnerVerificationTokenSchema.methods.createVerificationToken = function (done) {
     var verificationToken = this;
     var token = uuid.v4();
     verificationToken.set('token', token);
@@ -22,7 +28,7 @@ volunteerVerificationTokenSchema.methods.createVerificationToken = function (don
     });
 };
 
+var PartnerVerificationToken = mongoose.model('partnertoken', partnerVerificationTokenSchema);
+//var InstitutionModel = new Institution();
 
-var VolunteerVerificationToken = mongoose.model('volunteertoken', volunteerVerificationTokenSchema);
-
-module.exports = VolunteerVerificationToken;
+module.exports = PartnerVerificationToken;

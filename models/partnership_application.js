@@ -12,9 +12,8 @@ var PartnershipApplication =  function(args){
     app.region_province_state= args.region_province_state;
     app.country= args.country;
     app.contact_person= args.contact_person;
-
     app.email = args.email || null;
-    app.contact_number = args.contact_numbmichaer || null;
+    app.contact_number = args.contact_number || null;
 
     app.is_private= args.is_private || false;
     app.registration_date = args.registration_date || new Date();

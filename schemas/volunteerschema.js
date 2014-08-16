@@ -4,7 +4,7 @@
 
 var mongoose =  require('mongoose');
 
-var VolunteerSchema =  mongoose.Schema({
+var volunteerSchema =  mongoose.Schema({
 
     firstName: String,
     surname : String,
@@ -16,8 +16,8 @@ var VolunteerSchema =  mongoose.Schema({
     locality_lga: String,
     region_province_state: String,
     country: String,
-    email: String,
-    contact_number:String,
+    email:  {address :String, verified: Boolean},
+    contact_number : {number :String, verified: Boolean},
     registrationDate : {
         type:Date,
         default:Date.now
@@ -28,4 +28,6 @@ var VolunteerSchema =  mongoose.Schema({
 
 });
 
-module.exports = VolunteerSchema;
+var Volunteer = mongoose.model('volunteer', volunteerSchema);
+
+module.exports = Volunteer;

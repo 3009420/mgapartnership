@@ -31,8 +31,8 @@ var Volunteer =  function(args){
     volunteer.locality_lga= args.locality_lga;
     volunteer.region_province_state= args.region_province_state;
     volunteer.country= args.country;
-    volunteer.email= args.email;
-    volunteer.contact_number= args.contact_number;
+    volunteer.email = { address: args.email || null};
+    volunteer.contact_number = { number:args.contact_number || null};
     volunteer.registrationDate = args.registrationDate || new Date();
 
     volunteer.partnershipState = "unverified";
