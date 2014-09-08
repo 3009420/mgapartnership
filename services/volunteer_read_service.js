@@ -64,3 +64,30 @@ exports.getVolunteers = function(args, done){
     }else
         return done(null, null);
 };
+
+
+exports.volunteerEmailExist = function(args, done){
+
+    if(args) {
+        VolunteerModel.findOne(
+            {
+                email:{
+                    address:partnershipApp.email
+                }
+            },
+            function (err, volunteer) {
+                if (err) {
+                    return done(err, null);
+                }
+                if (volunteer) {
+                    return done(null,true);
+                } else {
+                    return done(null,false);
+                }
+            });
+
+    }else{
+        var error = "No valid email";
+        return done(error, null)
+    }
+};

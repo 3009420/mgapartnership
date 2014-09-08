@@ -54,3 +54,29 @@ exports.getPartners = function(args, done){
 
     }
 };
+
+exports.partnerEmailExist = function(args, done){
+
+    if(args) {
+        InstitutionModel.findOne(
+            {
+                email:{
+                    address:args.email
+                }
+            },
+            function (err, foundInstitution) {
+                if (err) {
+                    return done(err, null);
+                }
+                if (foundInstitution) {
+                   return done(null,true);
+                } else {
+                    return done(null,false);
+                }
+            });
+
+    }else{
+        var error = "No valid email";
+        return done(error, null)
+    }
+};
