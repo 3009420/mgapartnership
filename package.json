@@ -1,6 +1,6 @@
 {
   "name": "mgapartnership",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Medic Grid Africa Partnership",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,18 @@
   },
   "dependencies": {
     "moment": "^2.7.0",
-    "speakeasy": "^1.0.3"
-  }
+    "speakeasy": "^1.0.3",
+    "node-uuid": "1.4.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onlythompson/mgapartnership.git"
+  },
+  "bugs": {
+    "url": "https://github.com/onlythompson/mgapartnership/issues"
+  },
+  "homepage": "https://github.com/onlythompson/mgapartnership"
 }
